@@ -9,7 +9,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/covid-tracker.git"
+        "url": "git+https://github.com/vhdcoupons/covid-tracker.git"
     },
     "keywords": [
         "nodejs",
@@ -18,9 +18,9 @@
     "author": "Harshal Desai",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/covid-tracker/issues"
+        "url": "https://github.com/vhdcoupons/covid-tracker/issues"
     },
-    "homepage": "https://github.com/covid-tracker#readme",
+    "homepage": "https://github.com/vhdcoupons/covid-tracker#readme",
     "dependencies": {
         "body-parser": "^1.17.2",
         "express": "^4.15.3",
