@@ -1,0 +1,33 @@
+{
+    "name": "covid-tracker",
+    "version": "1.0.0",
+    "description": "A covid-19 tracking website.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/covid-tracker.git"
+    },
+    "keywords": [
+        "nodejs",
+        "expressjs"
+    ],
+    "author": "Harshal Desai",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/covid-tracker/issues"
+    },
+    "homepage": "https://github.com/covid-tracker#readme",
+    "dependencies": {
+        "body-parser": "^1.17.2",
+        "express": "^4.15.3",
+        "express-handlebars": "^3.0.0",
+        "morgan": "^1.8.2",
+        "nodemon": "^2.0.7",
+        "path": "^0.12.7",
+        "request": "^2.81.0"
+    }
+}

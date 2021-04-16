@@ -1,0 +1,64 @@
+<div>
+    <nav class="navbar navbar-default navigation-clean-button  navbar-expand-lg navbar-light " style="background-color:#bbd0ee;">
+        <div class="container">
+            <div class="navbar-header"><h1>Covid-Tracker</h1>            
+                {{!-- <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> --}}
+            </div>
+            {{!-- <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li class="active" role="presentation"><a id="savedArticles" style="color:green;" href="/">Saved Articles</a></li>
+                    <li role="presentation"><a id="scrapeArticles" href="/scrape" style="background-color:#ffffff;">Scrape 30 Articles</a></li>
+                    <li role="presentation"><a id="deleteArticles" href="/" style="color:red;">Delete All Saved Articles</a></li>
+                </ul>
+            </div> --}}
+        </div>
+    </nav>
+</div>
+<br />
+<div class="container">
+    <iframe src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map&country=USA" width="100%" height="600px"></iframe>
+</div>
+<br />
+<br />
+<br />
+<br />
+
+<div class="container">
+    <table class="table table-striped ">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">State Code</th>
+            <th scope="col">State</th>
+            <th scope="col">Population</th>
+            <th scope="col">Death</th>
+            <th scope="col">Covid+</th>
+            <th scope="col">Hospitalized</th>
+            <th scope="col">Seniors (Over 60)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#if covidAllStatesData}} {{#each covidAllStatesData}}
+            <tr>
+                <th scope="row">{{this.state}}</th>
+                <td>{{this.stateName}}</td>
+                <td>{{this.population}}</td>
+                <td>{{this.death}}</td>
+                <td>{{this.positive}}</td>
+                <td>{{this.hospitalizedCurrently}}</td>
+                <td>{{this.adults60Up}}</td>
+            </tr>
+            {{/each}} {{else}}
+            <div class="row">
+                <h3 class="danger">No data found...</h3>
+            </div>
+            {{!-- <h5>{{this.state}}</h5> --}}
+            {{!-- {{/each}} --}}
+        {{/if}}
+  </tbody>
+    </div>
+    </table>
+</div>
+<div class="modal fade" role="dialog" tabindex="-1" id="notesModal">
+    
+</div>
+<script src="/assets/js/app.js"></script>

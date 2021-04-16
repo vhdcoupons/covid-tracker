@@ -1,0 +1,47 @@
+<div>
+    <nav class="navbar navbar-default navigation-clean-button" style="background-color:#bbd0ee;">
+        <div class="container">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="/">Mongo News Scraper </a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li role="presentation"><a id="savedArticles" href="/">Saved Articles</a></li>
+                    <li class="active" role="presentation"><a id="scrapeArticles" href="/scrape" style="background-color:#ffffff;">Scrape 30 Articles</a></li>
+                    <li role="presentation"><a id="deleteArticles" href="/" style="color:red;">Delete All Saved Articles</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<br />
+<div class="container">
+    <div class="panel-group">
+        {{#if articles}} {{#each articles}}
+        <div class="panel panel-default articles">
+            <div class="panel-heading">
+                <h4>
+                    <a target="_blank" href={{this.link}}>{{this.title}}</a>
+                    <button type="button" class="btn btn-success saveArticle" style="float:right;" data-title="{{this.title}}" data-link="{{this.link}}"
+                        data-imgUrl="{{this.imgUrl}}" data-summary="{{this.summary}}">
+                        Save Article</button>
+                </h4>
+            </div>
+            <div class="panel-body">
+                <div class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
+                    <a target="_blank" href={{this.link}}><img height=100 width=150 src={{this.imgUrl}}></a>
+                </div>
+                <div class="col-xs-8 col-sm-9 col-md-9 col-lg-10">
+                    <h5>{{this.summary}}</h5>
+                    {{!--<a target="_blank" href={{this.link}}>Link of original aritcle</a>--}}
+                </div>
+            </div>
+        </div>
+        {{/each}} {{else}}
+        <div class="row">
+            <h3 class="danger">No saved articles found in the database...</h3>
+        </div>
+        {{/if}}
+    </div>
+</div>
+<script src="/assets/js/scrape.js"></script>
